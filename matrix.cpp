@@ -53,7 +53,7 @@ float** additionMatrix(float** matrixA, float** matrixB, int rows, int cols) {
 
 float** multiplyMatrix(float** matrixA, int rowsA, int colsA, float** matrixB, int rowsB, int colsB) {
     if (colsA != rowsB) {
-        cout << "Íåâîçìîæíî óìíîæèòü ìàòðèöû: íåñîâìåñòèìûå ðàçìåðû.\n";
+        cout << "ÐÐµÐ²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ ÑƒÐ¼Ð½Ð¾Ð¶Ð¸Ñ‚ÑŒ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñ‹: Ð½ÐµÑÐ¾Ð²Ð¼ÐµÑÑ‚Ð¸Ð¼Ñ‹Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€Ñ‹.\n";
         return nullptr;
     }
     float** result = create2DArray(rowsA, colsB);
@@ -83,8 +83,8 @@ int main() {
 
     int action;
     while(true) {
-        cout << "Âûáåðèòå äåéñòâèå íàä ìàòðèöàìè:\n";
-        cout << "1. Ñëîæåíèå ìàòðèö\n2. Óìíîæåíèå ìàòðèö\n3. Òðàíñïîíèðîâàíèå ìàòðèöû\n4. Âûõîä èç ïðîãðàììû (ëþáîé ñèìâîë)" << endl;
+        cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ Ð½Ð°Ð´ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ð°Ð¼Ð¸:\n";
+        cout << "1. Ð¡Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†\n2. Ð£Ð¼Ð½Ð¾Ð¶ÐµÐ½Ð¸Ðµ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†\n3. Ð¢Ñ€Ð°Ð½ÑÐ¿Ð¾Ð½Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñ‹\n4. Ð’Ñ‹Ñ…Ð¾Ð´ Ð¸Ð· Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹ (Ð»ÑŽÐ±Ð¾Ð¹ ÑÐ¸Ð¼Ð²Ð¾Ð»)" << endl;
         cout << ">";
         cin >> action;
 
@@ -94,26 +94,26 @@ int main() {
                 int rows, cols;
 
                 while(true) {
-                cout << "Ââåäèòå êîë-âî ñòðîê è ñòîëáöîâ äëÿ ìàòðèö (äâà ÷èñëà ÷åðåç ïðîáåë): ";
+                cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»-Ð²Ð¾ ÑÑ‚Ñ€Ð¾Ðº Ð¸ ÑÑ‚Ð¾Ð»Ð±Ñ†Ð¾Ð² Ð´Ð»Ñ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ† (Ð´Ð²Ð° Ñ‡Ð¸ÑÐ»Ð° Ñ‡ÐµÑ€ÐµÐ· Ð¿Ñ€Ð¾Ð±ÐµÐ»): ";
                 cin >> rows >> cols;
                 if (rows <= 0 || cols <= 0) {
-                    cout << "Êîë-âî ñòðîê è ñòîáöîâ äîëæíî áûòü ïîëîæèòåëüíûì ÷èñëîì.\n";
+                    cout << "ÐšÐ¾Ð»-Ð²Ð¾ ÑÑ‚Ñ€Ð¾Ðº Ð¸ ÑÑ‚Ð¾Ð±Ñ†Ð¾Ð² Ð´Ð¾Ð»Ð¶Ð½Ð¾ Ð±Ñ‹Ñ‚ÑŒ Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¼ Ñ‡Ð¸ÑÐ»Ð¾Ð¼.\n";
                 } else
                     break;
                 }
                 cout << endl;
                 float** matrixA = create2DArray(rows, cols);
-                cout << "Ìàòðèöà A ñîçäàíà (" << rows << " x " << cols << "). Çàïîëíèòå ìàòðèöó:\n";
+                cout << "ÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ð° A ÑÐ¾Ð·Ð´Ð°Ð½Ð° (" << rows << " x " << cols << "). Ð—Ð°Ð¿Ð¾Ð»Ð½Ð¸Ñ‚Ðµ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñƒ:\n";
                 input2DArray(matrixA, rows, cols);
                 cout << endl;
 
                 float** matrixB = create2DArray(rows, cols);
-                cout << "Ìàòðèöà B Ñîçäàíà (" << rows << " x " << cols << "). Çàïîëíèòå ìàòðèöó:\n";
+                cout << "ÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ð° B Ð¡Ð¾Ð·Ð´Ð°Ð½Ð° (" << rows << " x " << cols << "). Ð—Ð°Ð¿Ð¾Ð»Ð½Ð¸Ñ‚Ðµ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñƒ:\n";
                 input2DArray(matrixB, rows, cols);
                 cout << endl;
 
                 float** matrixC = additionMatrix(matrixA, matrixB, rows, cols);
-                cout << "Ìàòðèöû ñëîæåíû!\n";
+                cout << "ÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ñ‹ ÑÐ»Ð¾Ð¶ÐµÐ½Ñ‹!\n";
                 output2DArray(matrixC, rows, cols);
                 cout << endl;
                 
@@ -130,36 +130,36 @@ int main() {
                 int rowsB, colsB;
 
                 while(true) {
-                    cout << "Ââåäèòå ðàçìåð ìàòðèöû A (ñòðîêè ñòîëáöû): ";
+                    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñ‹ A (ÑÑ‚Ñ€Ð¾ÐºÐ¸ ÑÑ‚Ð¾Ð»Ð±Ñ†Ñ‹): ";
                     cin >> rowsA >> colsA;
                     if (rowsA <= 0 || colsA <= 0) {
-                    cout << "Êîë-âî ñòðîê è ñòîáöîâ äîëæíî áûòü ïîëîæèòåëüíûì ÷èñëîì.\n";
+                    cout << "ÐšÐ¾Ð»-Ð²Ð¾ ÑÑ‚Ñ€Ð¾Ðº Ð¸ ÑÑ‚Ð¾Ð±Ñ†Ð¾Ð² Ð´Ð¾Ð»Ð¶Ð½Ð¾ Ð±Ñ‹Ñ‚ÑŒ Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¼ Ñ‡Ð¸ÑÐ»Ð¾Ð¼.\n";
                     } else
                         break;
                 }
                 cout << endl;
                 float** matrixA = create2DArray(rowsA, colsA);
-                cout << "Ìàòðèöà A ñîçäàíà (" << rowsA << " x " << colsA << "). Çàïîëíèòå ìàòðèöó:\n";
+                cout << "ÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ð° A ÑÐ¾Ð·Ð´Ð°Ð½Ð° (" << rowsA << " x " << colsA << "). Ð—Ð°Ð¿Ð¾Ð»Ð½Ð¸Ñ‚Ðµ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñƒ:\n";
                 input2DArray(matrixA, rowsA, colsA);
                 cout << endl;
 
                 while(true) {
-                    cout << "Ââåäèòå ðàçìåð ìàòðèöû B (ñòðîêè ñòîëáöû): ";
+                    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñ‹ B (ÑÑ‚Ñ€Ð¾ÐºÐ¸ ÑÑ‚Ð¾Ð»Ð±Ñ†Ñ‹): ";
                     cin >> rowsB >> colsB;
                     if (rowsB <= 0 || colsB <= 0) {
-                    cout << "Êîë-âî ñòðîê è ñòîáöîâ äîëæíî áûòü ïîëîæèòåëüíûì ÷èñëîì.\n";
+                    cout << "ÐšÐ¾Ð»-Ð²Ð¾ ÑÑ‚Ñ€Ð¾Ðº Ð¸ ÑÑ‚Ð¾Ð±Ñ†Ð¾Ð² Ð´Ð¾Ð»Ð¶Ð½Ð¾ Ð±Ñ‹Ñ‚ÑŒ Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¼ Ñ‡Ð¸ÑÐ»Ð¾Ð¼.\n";
                     } else
                         break;
                 }
                 cout << endl;
                 float** matrixB = create2DArray(rowsB, colsB);
-                cout << "Ìàòðèöà B Ñîçäàíà (" << rowsB << " x " << colsB << "). Çàïîëíèòå ìàòðèöó:\n";
+                cout << "ÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ð° B Ð¡Ð¾Ð·Ð´Ð°Ð½Ð° (" << rowsB << " x " << colsB << "). Ð—Ð°Ð¿Ð¾Ð»Ð½Ð¸Ñ‚Ðµ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñƒ:\n";
                 input2DArray(matrixB, rowsB, colsB);
                 cout << endl;
 
                 float** matrixC = multiplyMatrix(matrixA, rowsA, colsA, matrixB, rowsB, colsB);
                 if (matrixC != nullptr) {
-                    cout << "Ïðîèçâåäåíèå ìàòðèö A x B\n";
+                    cout << "ÐŸÑ€Ð¾Ð¸Ð·Ð²ÐµÐ´ÐµÐ½Ð¸Ðµ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ† A x B\n";
                     output2DArray(matrixC, rowsA, colsB);
                     cout << endl;
                 }
@@ -175,20 +175,20 @@ int main() {
                 int rows, cols;
 
                 while(true) {
-                    cout << "Ââåäèòå ðàçìåð ìàòðèöû A (ñòðîêè ñòîëáöû): ";
+                    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñ‹ A (ÑÑ‚Ñ€Ð¾ÐºÐ¸ ÑÑ‚Ð¾Ð»Ð±Ñ†Ñ‹): ";
                     cin >> rows >> cols;
                     if (rows <= 0 || cols <= 0) {
-                    cout << "Êîë-âî ñòðîê è ñòîáöîâ äîëæíî áûòü ïîëîæèòåëüíûì ÷èñëîì.\n";
+                    cout << "ÐšÐ¾Ð»-Ð²Ð¾ ÑÑ‚Ñ€Ð¾Ðº Ð¸ ÑÑ‚Ð¾Ð±Ñ†Ð¾Ð² Ð´Ð¾Ð»Ð¶Ð½Ð¾ Ð±Ñ‹Ñ‚ÑŒ Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¼ Ñ‡Ð¸ÑÐ»Ð¾Ð¼.\n";
                     } else
                         break;
                 }
                 cout << endl;
                 float** matrixA = create2DArray(rows, cols);
-                cout << "Ìàòðèöà A ñîçäàíà (" << rows << " x " << cols << "). Çàïîëíèòå ìàòðèöó:\n";
+                cout << "ÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ð° A ÑÐ¾Ð·Ð´Ð°Ð½Ð° (" << rows << " x " << cols << "). Ð—Ð°Ð¿Ð¾Ð»Ð½Ð¸Ñ‚Ðµ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñƒ:\n";
                 input2DArray(matrixA, rows, cols);
                 cout << endl;
                 float** matrixAT = transposeMatrix(matrixA, rows, cols);
-                cout << "Òðàíñïîíèðîâàííàÿ ìàòðèöà A\n";
+                cout << "Ð¢Ñ€Ð°Ð½ÑÐ¿Ð¾Ð½Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ð°Ñ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ð° A\n";
                 output2DArray(matrixAT, cols, rows);
                 cout << endl;
 
